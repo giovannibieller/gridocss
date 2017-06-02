@@ -1,0 +1,42 @@
+@import './utils/mixins';
+.grido {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: raw;
+    flex-wrap: wrap;
+    margin-left: -.5rem;
+    margin-right: -.5rem;
+}
+
+@include grido-generator('grido');
+@include grido-generator--md('grido');
+@include grido-generator--sm('grido');
+.grido__33 {
+    flex-basis: 33.333333%;
+    max-width: 33.333333%;
+}
+
+.grido__66 {
+    flex-basis: 66.666666%;
+    max-width: 66.666666%;
+}
+
+.grido__md__33 {
+    flex-basis: 33.333333%;
+    max-width: 33.333333%;
+}
+
+.grido__md__66 {
+    flex-basis: 66.666666%;
+    max-width: 66.666666%;
+}
+
+.grido__sm__33 {
+    flex-basis: 33.333333%;
+    max-width: 33.333333%;
+}
+
+.grido__sm__66 {
+    flex-basis: 66.666666%;
+    max-width: 66.666666%;
+}

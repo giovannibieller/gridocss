@@ -1,0 +1,35 @@
+@mixin grido-generator($class) {
+    @for $i from 1 through 100 {
+        .#{$class}__#{$i} {
+            flex-basis: $i + %;
+            max-width: $i + %;
+            padding-left: .5rem;
+            padding-right: .5rem;
+            box-sizing: border-box;
+        }
+    }
+}
+
+@mixin grido-generator--md($class) {
+    @for $i from 1 through 100 {
+        .#{$class}__md__#{$i} {
+            flex-basis: $i + %;
+            max-width: $i + %;
+            padding-left: .5rem;
+            padding-right: .5rem;
+            box-sizing: border-box;
+        }
+    }
+}
+
+@mixin grido-generator--sm($class) {
+    @for $i from 1 through 100 {
+        .#{$class}__sm__#{$i} {
+            flex-basis: $i + %;
+            max-width: $i + %;
+            padding-left: .5rem;
+            padding-right: .5rem;
+            box-sizing: border-box;
+        }
+    }
+}
