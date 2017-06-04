@@ -1,35 +1,88 @@
-@mixin grido-generator($class) {
+@mixin grido-generator($class, $dimension) {
     @for $i from 1 through 100 {
-        .#{$class}__#{$i} {
-            flex-basis: $i + %;
-            max-width: $i + %;
-            padding-left: .5rem;
-            padding-right: .5rem;
-            box-sizing: border-box;
+        @if $i%5==0 {
+            @if $dimension!='' {
+                .#{$class}__#{$i}__#{$dimension} {
+                    flex-basis: $i + %;
+                    max-width: $i + %;
+                }
+            }
+            @else {
+                .#{$class}__#{$i} {
+                    flex-basis: $i + %;
+                    max-width: $i + %;
+                }
+            }
         }
     }
 }
 
-@mixin grido-generator--md($class) {
-    @for $i from 1 through 100 {
-        .#{$class}__md__#{$i} {
-            flex-basis: $i + %;
-            max-width: $i + %;
-            padding-left: .5rem;
-            padding-right: .5rem;
-            box-sizing: border-box;
+@mixin grido-generator-special($class, $width, $dimension) {
+    @if $dimension!='' {
+        .#{$class}__#{$dimension} {
+            flex-basis: $width;
+            max-width: $width;
+        }
+    }
+    @else {
+        .#{$class} {
+            flex-basis: $width;
+            max-width: $width;
         }
     }
 }
 
-@mixin grido-generator--sm($class) {
-    @for $i from 1 through 100 {
-        .#{$class}__sm__#{$i} {
-            flex-basis: $i + %;
-            max-width: $i + %;
-            padding-left: .5rem;
-            padding-right: .5rem;
-            box-sizing: border-box;
+@mixin grido-generator-grows($class, $dimension) {
+    @for $grow from 1 through 5 {
+        @if $dimension!='' {
+            .#{$class}__#{$grow}__#{$dimension} {
+                flex: $grow;
+            }
+        }
+        @else {
+            .#{$class}__#{$grow} {
+                flex: $grow;
+            }
         }
     }
+}
+
+@mixin grido-generator-order($class, $dimension) {
+    @for $order from 1 through 10 {
+        @if $dimension!='' {
+            .#{$class}__#{$order}__#{$dimension} {
+                order: $order;
+            }
+        }
+        @else {
+            .#{$class}__#{$order} {
+                order: $order;
+            }
+        }
+    }
+}
+
+$breakpoints: ( 'sm' 'screen and (max-width: 767px)', 'md' 'screen and (max-width: 991px)') !default;
+@mixin media-query($mq) {
+    $breakpoint-found: false;
+    @each $breakpoint in $breakpoints {
+        $alias: nth($breakpoint, 1);
+        $condition: nth($breakpoint, 2);
+        @if $mq==$alias and $condition {
+            $breakpoint-found: true;
+            @media #{$condition} {
+                @content;
+            }
+        }
+    }
+    @if $breakpoint-found==false {
+        @warn "Oops! Breakpoint ‘#{$mq}’ does not exist."
+    }
+}
+
+@mixin transition($time) {
+    -webkit-transition: all $time ease-in-out;
+    -moz-transition: all $time ease-in-out;
+    -o-transition: all $time ease-in-out;
+    transition: all $time ease-in-out;
 }

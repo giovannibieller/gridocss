@@ -7,143 +7,265 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,600" rel="stylesheet">
-    <style>
-        body {
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-            font-size: 16px;
-            color: black;
-        }
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
 
-        h1 {
-            font-weight: 600;
-            margin-top: 0;
-            margin-bottom: 30px;
-        }
-
-        .container {
-            padding: 30px;
-        }
-
-        .grido__item {
-            color: white;
-        }
-
-        .grido__item__content {
-            padding: .5rem;
-            margin-bottom: 1rem;
-            background: black;
-        }
-
-        .text {
-            margin-top: 20px;
-        }
-    </style>
+    <link href="css/demo.min.css" rel="stylesheet">
     <link href="css/grido.min.css" rel="stylesheet">
 </head>
 
 <body>
-    <div class="container">
+    <div class="demo__container">
         <h1>gridoCSS</h1>
+        <div class="demo__main__content">
+            <p>The superlight <strong>5KB</strong> responsive FlexBox CSS Grid.</p>
+        </div>
 
         <div class="grido">
-            <div class="grido__item grido__100">
-                <div class="grido__item__content">&nbsp;</div>
+            <div class="demo__item grido__100">
+                <div class="demo__item__content">&nbsp;</div>
+            </div>
+        </div>
+
+        <div class="grido grido__gutter">
+            <div class="demo__item grido__20 grido__33__md  grido__100__sm">
+                <div class="demo__item__content">&nbsp;</div>
+            </div>
+            <div class="demo__item grido__60 grido__33__md grido__50__sm">
+                <div class="demo__item__content">&nbsp;</div>
+            </div>
+            <div class="demo__item grido__20 grido__33__md grido__50__sm">
+                <div class="demo__item__content">&nbsp;</div>
+            </div>
+        </div>
+
+        <div class="grido grido__gutter">
+            <div class="demo__item grido__20 grido__33__md  grido__100__sm">
+                <div class="demo__item__content">&nbsp;</div>
+            </div>
+            <div class="demo__item grido__10 grido__33__md  grido__50__sm">
+                <div class="demo__item__content">&nbsp;</div>
+            </div>
+            <div class="demo__item grido__20 grido__33__md  grido__50__sm">
+                <div class="demo__item__content">&nbsp;</div>
+            </div>
+            <div class="demo__item grido__20 grido__33__md  grido__100__sm">
+                <div class="demo__item__content">&nbsp;</div>
+            </div>
+            <div class="demo__item grido__10 grido__33__md  grido__50__sm">
+                <div class="demo__item__content">&nbsp;</div>
+            </div>
+            <div class="demo__item grido__20 grido__33__md  grido__50__sm">
+                <div class="demo__item__content">&nbsp;</div>
+            </div>
+        </div>
+
+        <div class="grido grido__gutter">
+            <div class="demo__item grido__33 grido__100__md">
+                <div class="demo__item__content">&nbsp;</div>
+            </div>
+            <div class="demo__item grido__33 grido__50__md">
+                <div class="demo__item__content">&nbsp;</div>
+            </div>
+            <div class="demo__item grido__33 grido__50__md">
+                <div class="demo__item__content">&nbsp;</div>
             </div>
         </div>
 
         <div class="grido">
-            <div class="grido__item grido__20">
-                <div class="grido__item__content">&nbsp;</div>
-            </div>
-            <div class="grido__item grido__60">
-                <div class="grido__item__content">&nbsp;</div>
-            </div>
-            <div class="grido__item grido__20">
-                <div class="grido__item__content">&nbsp;</div>
+            <div class="demo__item grido__100">
+                <div class="demo__item__content">&nbsp;</div>
             </div>
         </div>
 
-        <div class="grido">
-            <div class="grido__item grido__15">
-                <div class="grido__item__content">&nbsp;</div>
+        <h2>grido container</h2>
+        <div class="demo__text">
+            &#126; add
+            <pre>grido</pre> class to your container<br/> &#126; example:
+            <pre> &lt;div class="grido"&gt;&lt;/div&gt; </pre>
+        </div>
+
+        <h2>grido items</h2>
+        <div class="demo__text">
+            &#126; add
+            <pre>grido__</pre> class to your items, followed by the
+            <pre>% width</pre> that you're looking for.<br/> percentages: 5, 10, 15, 20, 25 ... up to 100<br/> &#126; special widths:
+            <pre>.grido__33</pre> set 33.333333% width ||
+            <pre>.grido__66</pre> set 66.666666% width ||
+            <pre>.grido__auto</pre> set width to auto<br/>&#126; example:
+            <pre> &lt;div class="grido__20"&gt;&lt;/div&gt; </pre> set 20% width to the item
+        </div>
+
+        <h2>grido responsive</h2>
+        <div class="demo__text">
+            &#126; add
+            <pre>grido__</pre> class to your items, followed by the
+            <pre>% width</pre> that you're looking for and the device size
+            <pre>sm [mobile], md [tablet]</pre>.<br/> &#126; special widths:
+            <pre>.grido__33__{device}</pre>,
+            <pre>.grido__66__{device}</pre> and
+            <pre>.grido__auto__{device}</pre><br/> &#126; breakpoints: md
+            <pre>max-width: 991px;</pre> sm
+            <pre>max-width: 767px;</pre><br/>&#126; example:
+            <pre> &lt;div class="grido__20 grido__50__md grido__100__sm"&gt;&lt;/div&gt; </pre> set 20% width for a desktop view, 50% for tablet and 100% for mobile;
+        </div>
+
+        <h2>grido gutter</h2>
+        <div class="demo__text">
+            &#126; add
+            <pre>grido__gutter</pre> class to the container to have a padding between you items.<br/>otherwise you can add it where you need in your
+            own css<br/>&#126; example:
+            <pre> &lt;div class="grido grido__gutter"&gt;&lt;/div&gt; </pre>
+        </div>
+
+
+        <h2>grido alignments</h2>
+
+        <h3>space-between</h3>
+        <div class="demo__text demo__text--sub">
+            &#126; default alignment. items alignment to
+            <pre>space-between</pre>
+        </div>
+        <div class="grido grido__gutter">
+            <div class="demo__item grido__20">
+                <div class="demo__item__content">&nbsp;</div>
             </div>
-            <div class="grido__item grido__25">
-                <div class="grido__item__content">&nbsp;</div>
+            <div class="demo__item grido__20">
+                <div class="demo__item__content">&nbsp;</div>
             </div>
-            <div class="grido__item grido__10">
-                <div class="grido__item__content">&nbsp;</div>
-            </div>
-            <div class="grido__item grido__30">
-                <div class="grido__item__content">&nbsp;</div>
-            </div>
-            <div class="grido__item grido__20">
-                <div class="grido__item__content">&nbsp;</div>
+            <div class="demo__item grido__20">
+                <div class="demo__item__content">&nbsp;</div>
             </div>
         </div>
 
-        <div class="grido">
-            <div class="grido__item grido__33">
-                <div class="grido__item__content">&nbsp;</div>
+
+
+        <h3>space-around</h3>
+        <div class="demo__text demo__text--sub">
+            &#126; set
+            <pre>grido--around</pre> class to items for
+            <pre>space-around</pre> alignment<br/> &#126; example:
+            <pre> &lt;div class="grido grido--around"&gt;&lt;/div&gt; </pre>
+        </div>
+        <div class="grido grido--around grido__gutter">
+            <div class="demo__item grido__20">
+                <div class="demo__item__content">&nbsp;</div>
             </div>
-            <div class="grido__item grido__33">
-                <div class="grido__item__content">&nbsp;</div>
+            <div class="demo__item grido__20">
+                <div class="demo__item__content">&nbsp;</div>
             </div>
-            <div class="grido__item grido__33">
-                <div class="grido__item__content">&nbsp;</div>
+            <div class="demo__item grido__20">
+                <div class="demo__item__content">&nbsp;</div>
             </div>
         </div>
 
-        <div class="grido">
-            <div class="grido__item grido__20">
-                <div class="grido__item__content">&nbsp;</div>
+
+        <h3>flex-start</h3>
+        <div class="demo__text demo__text--sub">
+            &#126; set
+            <pre>grido--start</pre> class to items for
+            <pre>flex-start</pre> alignment<br/> &#126; example:
+            <pre> &lt;div class="grido grido--start"&gt;&lt;/div&gt; </pre>
+        </div>
+        <div class="grido grido--start grido__gutter">
+            <div class="demo__item grido__20">
+                <div class="demo__item__content">&nbsp;</div>
             </div>
-            <div class="grido__item grido__20">
-                <div class="grido__item__content">&nbsp;</div>
+            <div class="demo__item grido__20">
+                <div class="demo__item__content">&nbsp;</div>
             </div>
-            <div class="grido__item grido__20">
-                <div class="grido__item__content">&nbsp;</div>
-            </div>
-            <div class="grido__item grido__20">
-                <div class="grido__item__content">&nbsp;</div>
-            </div>
-            <div class="grido__item grido__20">
-                <div class="grido__item__content">&nbsp;</div>
+            <div class="demo__item grido__20">
+                <div class="demo__item__content">&nbsp;</div>
             </div>
         </div>
 
-        <div class="grido">
-            <div class="grido__item grido__25">
-                <div class="grido__item__content">&nbsp;</div>
+        <h3>flex-end</h3>
+        <div class="demo__text demo__text--sub">
+            &#126; set
+            <pre>grido--end</pre> class to items for
+            <pre>flex-end</pre> alignment<br/> &#126; example:
+            <pre> &lt;div class="grido grido--end"&gt;&lt;/div&gt; </pre>
+        </div>
+        <div class="grido grido--end grido__gutter">
+            <div class="demo__item grido__20">
+                <div class="demo__item__content">&nbsp;</div>
             </div>
-            <div class="grido__item grido__25">
-                <div class="grido__item__content">&nbsp;</div>
+            <div class="demo__item grido__20">
+                <div class="demo__item__content">&nbsp;</div>
             </div>
-            <div class="grido__item grido__25">
-                <div class="grido__item__content">&nbsp;</div>
-            </div>
-            <div class="grido__item grido__25">
-                <div class="grido__item__content">&nbsp;</div>
+            <div class="demo__item grido__20">
+                <div class="demo__item__content">&nbsp;</div>
             </div>
         </div>
 
-        <div class="grido">
-            <div class="grido__item grido__50">
-                <div class="grido__item__content">&nbsp;</div>
+        <h3>responsive alignments</h3>
+        <div class="demo__text demo__text--sub">
+            &#126; set
+            <pre>grido__{device}--{type}</pre> to manage responsive alignments<br/> &#126; example:
+            <pre> &lt;div class="grido grido--end grido__md--start grido__sm--between"&gt;&lt;/div&gt; </pre> set
+            <pre>flex-end</pre> alignment for a desktop view,
+            <pre>flex-start</pre> for tablet and
+            <pre>space-between</pre> for mobile
+        </div>
+        <div class="grido grido--end grido__md--start grido__sm--between grido__gutter">
+            <div class="demo__item grido__20">
+                <div class="demo__item__content">&nbsp;</div>
             </div>
-            <div class="grido__item grido__50">
-                <div class="grido__item__content">&nbsp;</div>
+            <div class="demo__item grido__20">
+                <div class="demo__item__content">&nbsp;</div>
+            </div>
+            <div class="demo__item grido__20">
+                <div class="demo__item__content">&nbsp;</div>
             </div>
         </div>
 
-        <div class="grido">
-            <div class="grido__item grido__100">
-                <div class="grido__item__content">&nbsp;</div>
+        <h2>grido autosizing and grow</h2>
+        <div class="demo__text demo__text--sub">
+            &#126; set
+            <pre>grido__auto</pre> class to set auto fill of the all the window space<br/> &#126; if you have a set of items and you want to have
+            one element with a larger width you can set
+            <pre>grido__auto__{number}</pre> to set a
+            <pre>flex-grow</pre> to the item. the default is 1. 2 will be twice the other elements widths<br/> &#126; it works responsive too
+            with
+            <pre>grido__auto__{number}__{device}</pre><br/> &#126; example:
+            <pre> &lt;div class="grido grido__auto"&gt;&lt;/div&gt;&lt;div class="grido grido__auto__3 grido__auto__1__md"&gt;&lt;/div&gt; </pre>
+        </div>
+        <div class="grido grido__gutter">
+            <div class="demo__item grido__auto">
+                <div class="demo__item__content">&nbsp;</div>
+            </div>
+            <div class="demo__item grido__auto__3 grido__auto__1__md">
+                <div class="demo__item__content">&nbsp;</div>
             </div>
         </div>
 
-        <div class="text">
-            by @giovannibieller
+        <h2>grido order</h2>
+        <div class="demo__text demo__text--sub">
+            &#126; set
+            <pre>grido__order__</pre> class to your items to change the order to display them<br/> &#126; it works responsive too with
+            <pre>grido__order__{num}__{device}</pre> class <br/> &#126; example: refers to block num 1
+            <pre> &lt;div class="grido grido__auto grido__order__2 grido__order__1__md grido__order__3__sm"&gt;&lt;/div&gt; </pre>
+        </div>
+        <div class="grido grido__trasition grido__gutter">
+            <div class="demo__item grido__auto grido__order__2 grido__order__1__md grido__order__3__sm">
+                <div class="demo__item__content">1</div>
+            </div>
+            <div class="demo__item grido__auto grido__order__1 grido__order__2__md grido__order__2__sm">
+                <div class="demo__item__content">2</div>
+            </div>
+            <div class="demo__item grido__auto grido__order__3 grido__order__3__md grido__order__1__sm">
+                <div class="demo__item__content">3</div>
+            </div>
+        </div>
+
+        <div class="demo__footer">
+            <div class="grido">
+                <div class="grido__auto grido__100__sm grido__order__2__sm">
+                    by <a href="https://twitter.com/giovannibieller">@giovannibieller</a>
+                </div>
+                <div class="grido__auto grido__100__sm  grido__order__1__sm txt__right txt__left__sm">
+                    <a href="#">dowload it</a> or <a href="#">fork on github</a>
+                </div>
+            </div>
         </div>
     </div>
 </body>

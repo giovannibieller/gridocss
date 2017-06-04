@@ -1,42 +1,90 @@
+/**
+ * @title gridoCSS
+ * @author Giovanni Bieller
+ * @wesite http://giovannibieller.me
+ * @email giovanni.bieller@gmail.com 
+ */
+
 @import './utils/mixins';
 .grido {
     box-sizing: border-box;
     display: flex;
-    flex-direction: raw;
+    flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-between;
+    &.grido--end {
+        justify-content: flex-end;
+    }
+    &.grido--start {
+        justify-content: flex-start;
+    }
+    &.grido--around {
+        justify-content: space-around;
+    }
+    @include media-query('md') {
+        &.grido__md--end {
+            justify-content: flex-end;
+        }
+        &.grido__md--start {
+            justify-content: flex-start;
+        }
+        &.grido__md--around {
+            justify-content: space-around;
+        }
+        &.grido__md--between {
+            justify-content: space-between;
+        }
+    }
+    @include media-query('sm') {
+        &.grido__sm--end {
+            justify-content: flex-end;
+        }
+        &.grido__sm--start {
+            justify-content: flex-start;
+        }
+        &.grido__sm--around {
+            justify-content: space-around;
+        }
+        &.grido__sm--between {
+            justify-content: space-between;
+        }
+    }
+}
+
+.grido__gutter {
     margin-left: -.5rem;
     margin-right: -.5rem;
+    [class*='grido__'] {
+        padding-left: .5rem;
+        padding-right: .5rem;
+    }
 }
 
-@include grido-generator('grido');
-@include grido-generator--md('grido');
-@include grido-generator--sm('grido');
-.grido__33 {
-    flex-basis: 33.333333%;
-    max-width: 33.333333%;
+[class*='grido__'] {
+    box-sizing: border-box;
+    flex: 1;
 }
 
-.grido__66 {
-    flex-basis: 66.666666%;
-    max-width: 66.666666%;
+@include grido-generator('grido', '');
+@include grido-generator-special('grido__33', 33.333333%, '');
+@include grido-generator-special('grido__66', 66.666666%, '');
+@include grido-generator-special('grido__auto', 'auto', '');
+@include grido-generator-grows('grido__auto', '');
+@include grido-generator-order('grido__order', '');
+@include media-query('md') {
+    @include grido-generator('grido', 'md');
+    @include grido-generator-special('grido__33', 33.333333%, 'md');
+    @include grido-generator-special('grido__66', 66.666666%, 'md');
+    @include grido-generator-special('grido__auto', 'auto', 'md');
+    @include grido-generator-grows('grido__auto', 'md');
+    @include grido-generator-order('grido__order', 'md');
 }
 
-.grido__md__33 {
-    flex-basis: 33.333333%;
-    max-width: 33.333333%;
-}
-
-.grido__md__66 {
-    flex-basis: 66.666666%;
-    max-width: 66.666666%;
-}
-
-.grido__sm__33 {
-    flex-basis: 33.333333%;
-    max-width: 33.333333%;
-}
-
-.grido__sm__66 {
-    flex-basis: 66.666666%;
-    max-width: 66.666666%;
+@include media-query('sm') {
+    @include grido-generator('grido', 'sm');
+    @include grido-generator-special('grido__33', 33.333333%, 'sm');
+    @include grido-generator-special('grido__66', 66.666666%, 'sm');
+    @include grido-generator-special('grido__auto', 'auto', 'sm');
+    @include grido-generator-grows('grido__auto', 'sm');
+    @include grido-generator-order('grido__order', 'sm');
 }
