@@ -1,8 +1,15 @@
 # gridocss
-simple, light and responsive 5KB Flexbox CSS Grid
+simple, light and responsive **5KB Flexbox CSS Grid**
 
 ## grido install ##
 ```npm install gridocss --save```
+
+## grido dev ##
+```npm install```<br/>
+```gulp watch``` for dev server Browsersync with Hot Reloading<br/>
+```gulp dist``` for production build<br/>
+
+---
 
 ## grido container ##
 ~ add  ```grido``` class to your container <br /> 

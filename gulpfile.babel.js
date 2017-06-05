@@ -34,7 +34,7 @@ gulp.task('browser-sync', () => {
  */
 gulp.task('copy-html', () => {
     return gulp
-        .src([paths.root + 'index.html'])
+        .src([paths.demo + '/index.html'])
         .pipe(gulp.dest(paths.dist))
         .pipe(browserSync.reload({ stream: true }));
 });
@@ -67,7 +67,7 @@ gulp.task('copy-demo', () => {
  */
 gulp.task('zip', () =>
     gulp
-        .src(paths.dist + '/css/grido.min.css')
+        .src(paths.dist + '/css/gridocss/grido.min.css')
         .pipe(zip('gridoCSS.zip'))
         .pipe(gulp.dest(paths.dist + '/zip'))
 );
@@ -91,7 +91,7 @@ gulp.task('scss', () => {
                 suffix: '.min'
             })
         )
-        .pipe(gulp.dest(paths.dist + '/css'))
+        .pipe(gulp.dest(paths.dist + '/css/gridocss'))
         .pipe(browserSync.reload({ stream: true }));
 });
 
@@ -110,7 +110,7 @@ gulp.task('default', ['dist']);
  */
 gulp.task('watch', ['dist', 'browser-sync'], () => {
     gulp.watch([paths.scss + '/*.scss'], ['scss']);
-    gulp.watch([paths.root + 'index.html'], ['copy-html']);
+    gulp.watch([paths.demo + '/index.html'], ['copy-html']);
     gulp.watch([paths.demo + '/demo.css'], ['copy-demo']);
 });
 
