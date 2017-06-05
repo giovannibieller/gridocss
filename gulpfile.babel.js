@@ -9,6 +9,7 @@ import rename from 'gulp-rename';
 import runSequence from 'run-sequence';
 import babel from 'gulp-babel';
 import browserSync from 'browser-sync';
+import zip from 'gulp-zip';
 
 const paths = {
     root: './',
@@ -62,6 +63,16 @@ gulp.task('copy-demo', () => {
 });
 
 /**
+ * Zip CSS
+ */
+gulp.task('zip', () =>
+    gulp
+        .src(paths.dist + '/css/grido.min.css')
+        .pipe(zip('gridoCSS.zip'))
+        .pipe(gulp.dest(paths.dist + '/zip'))
+);
+
+/**
  * Sass init
  */
 gulp.task('scss', () => {
@@ -107,5 +118,5 @@ gulp.task('watch', ['dist', 'browser-sync'], () => {
  * Dist
  */
 gulp.task('dist', ['clean-dist-css'], cb => {
-    runSequence('copy-demo', 'copy-html', 'scss', cb);
+    runSequence('copy-demo', 'copy-html', 'scss', 'zip', cb);
 });

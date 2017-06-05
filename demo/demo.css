@@ -3,6 +3,8 @@ body {
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
     color: black;
+    margin: 0;
+    padding: 0;
 }
 
 h1 {
@@ -44,7 +46,7 @@ pre {
     position: relative;
 }
 
-@media screen and (max-width:767px) {
+@media screen and (max-width: 767px) {
     .txt__left__sm {
         text-align: left !important;
         margin-top: 10px;
@@ -54,9 +56,11 @@ pre {
 .demo__container {
     padding: 30px;
     position: relative;
+    max-width: 1140px;
+    margin: 0 auto;
 }
 
-@media screen and (max-width:767px) {
+@media screen and (max-width: 767px) {
     .demo__container {
         padding: 15px;
     }
@@ -109,5 +113,6 @@ pre {
 }
 
 .demo__footer {
-    margin-top: 40px;
+    margin-top: 60px;
+    margin-bottom: 20px;
 }
