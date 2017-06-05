@@ -1,4 +1,4 @@
-# gridocss
+# gridoCSS
 simple, light and responsive **5KB Flexbox CSS Grid**
 
 ## grido install ##

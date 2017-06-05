@@ -1,6 +1,6 @@
 {
   "name": "gridocss",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "flex grid css",
   "main": "index.html",
   "scripts": {
