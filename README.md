@@ -36,28 +36,28 @@ simple, light and responsive **5KB Flexbox CSS Grid**
 ~ [default alignment] items alignment to ```space-between```
 
 ### space-around ###
-~ set ```grido--around``` class to items for ```space-around``` alignment
+~ set ```grido--around``` class to items for ```space-around``` alignment<br />
 ~ example: ```<div class="grido grido--around"></div>```
 
 ### flex-start ###
-~ set ```grido--start``` class to items for ```flex-start``` alignment
+~ set ```grido--start``` class to items for ```flex-start``` alignment<br />
 ~ example: ```<div class="grido grido--start"></div>```
 
 ### flex-end ###
-~ set ```grido--end``` class to items for ```flex-end``` alignment
+~ set ```grido--end``` class to items for ```flex-end``` alignment<br />
 ~ example: ```<div class="grido grido--end"></div>```
 
 ### responsive alignments ###
-~ set ```grido__{device}--{type}``` to manage responsive alignments
+~ set ```grido__{device}--{type}``` to manage responsive alignments<br />
 ~ example: ```<div class="grido grido--start grido__md--end grido__sm--between"></div>``` set  ```flex-start``` alignment for a desktop view,  ```flex-end``` for tablet and  ```space-between``` for mobile
 
 ## grido autosizing and grow ## 
-~ set ```grido__auto``` class to set auto fill of the all the window space
-~ if you have a set of items and you want to have one element with a larger width you can set ```grido__auto__{number}``` to set a  flex-grow to the item. the default is 1. 2 will be twice the other elements widths
-~ it works responsive too with ```grido__auto__{number}__{device}```
-~ example:  ```<div class="grido grido__auto"></div><div class="grido grido__auto__3 grido__auto__1__md"></div> ```
+~ set ```grido__auto``` class to set auto fill of the all the window space<br />
+~ if you have a set of items and you want to have one element with a larger width you can set ```grido__auto__{number}``` to set a  flex-grow to the item. the default is 1. 2 will be twice the other elements widths<br />
+~ it works responsive too with ```grido__auto__{number}__{device}```<br />
+~ example:  ```<div class="grido grido__auto"></div><div class="grido grido__auto__3 grido__auto__1__md"></div> ```<br />
 
 ## grido order ##
-~ set ```grido__order__ class``` to your items to change the order to display them
-~ it works responsive too with ```grido__order__{num}__{device}``` class 
-~ example: refers to block num 1  ```<div class="grido grido__auto grido__order__2 grido__order__1__md grido__order__3__sm"></div>```
+~ set ```grido__order__ class``` to your items to change the order to display them<br />
+~ it works responsive too with ```grido__order__{num}__{device}``` class <br />
+~ example: refers to block num 1  ```<div class="grido grido__auto grido__order__2 grido__order__1__md grido__order__3__sm"></div>```<br />
