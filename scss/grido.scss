@@ -22,69 +22,71 @@
         justify-content: space-around;
     }
     @include media-query('md') {
-        &.grido__md--end {
+        &.grido_md--end {
             justify-content: flex-end;
         }
-        &.grido__md--start {
+        &.grido_md--start {
             justify-content: flex-start;
         }
-        &.grido__md--around {
+        &.grido_md--around {
             justify-content: space-around;
         }
-        &.grido__md--between {
+        &.grido_md--between {
             justify-content: space-between;
         }
     }
     @include media-query('sm') {
-        &.grido__sm--end {
+        &.grido_sm--end {
             justify-content: flex-end;
         }
-        &.grido__sm--start {
+        &.grido_sm--start {
             justify-content: flex-start;
         }
-        &.grido__sm--around {
+        &.grido_sm--around {
             justify-content: space-around;
         }
-        &.grido__sm--between {
+        &.grido_sm--between {
             justify-content: space-between;
         }
     }
 }
 
-.grido__pads {
+.grido--pads {
     margin-left: -.5rem;
     margin-right: -.5rem;
-    [class*='grido__'] {
+    [class*='gc_'] {
         padding-left: .5rem;
         padding-right: .5rem;
     }
 }
 
-[class*='grido__'] {
+[class*='gc_'] {
     box-sizing: border-box;
     flex: 1;
 }
 
-@include grido-generator('grido', '');
-@include grido-generator-special('grido__33', 33.333333%, '');
-@include grido-generator-special('grido__66', 66.666666%, '');
-@include grido-generator-special('grido__auto', 'auto', '');
-@include grido-generator-grows('grido__auto', '');
-@include grido-generator-order('grido__order', '');
+[class*='grido'] {
+    box-sizing: border-box;
+    flex: 1;
+}
+
+@include grido-generator('');
+@include grido-generator-percent('');
+@include grido-generator-special('auto', 'auto', '');
+@include grido-generator-grows('auto', '');
+@include grido-generator-order('order', '');
 @include media-query('md') {
-    @include grido-generator('grido', 'md');
-    @include grido-generator-special('grido__33', 33.333333%, 'md');
-    @include grido-generator-special('grido__66', 66.666666%, 'md');
-    @include grido-generator-special('grido__auto', 'auto', 'md');
-    @include grido-generator-grows('grido__auto', 'md');
-    @include grido-generator-order('grido__order', 'md');
+    @include grido-generator('md');
+    @include grido-generator-percent('md');
+    @include grido-generator-special('auto', 'auto', 'md');
+    @include grido-generator-grows('auto', 'md');
+    @include grido-generator-order('order', 'md');
 }
 
 @include media-query('sm') {
-    @include grido-generator('grido', 'sm');
-    @include grido-generator-special('grido__33', 33.333333%, 'sm');
-    @include grido-generator-special('grido__66', 66.666666%, 'sm');
-    @include grido-generator-special('grido__auto', 'auto', 'sm');
-    @include grido-generator-grows('grido__auto', 'sm');
-    @include grido-generator-order('grido__order', 'sm');
+    @include grido-generator('sm');
+    @include grido-generator-percent('sm');
+    @include grido-generator-special('auto', 'auto', 'sm');
+    @include grido-generator-grows('auto', 'sm');
+    @include grido-generator-order('order', 'sm');
 }

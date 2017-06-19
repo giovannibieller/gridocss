@@ -1,14 +1,33 @@
-@mixin grido-generator($class, $dimension) {
+@mixin grido-generator($dimension) {
+    @for $i from 1 through 12 {
+        @if $i !=1 and $i !=11 {
+            @if $dimension!='' {
+                .gc_#{$i}_#{$dimension} {
+                    flex-basis: (($i / 12) * 100) + %;
+                    max-width: (($i / 12) * 100) + %;
+                }
+            }
+            @else {
+                .gc_#{$i} {
+                    flex-basis: (($i / 12) * 100) + %;
+                    max-width: (($i / 12) * 100) + %;
+                }
+            }
+        }
+    }
+}
+
+@mixin grido-generator-percent($dimension) {
     @for $i from 1 through 100 {
         @if $i%5==0 {
             @if $dimension!='' {
-                .#{$class}__#{$i}__#{$dimension} {
+                .gc_#{$i}_#{$dimension}-p {
                     flex-basis: $i + %;
                     max-width: $i + %;
                 }
             }
             @else {
-                .#{$class}__#{$i} {
+                .gc_#{$i}-p {
                     flex-basis: $i + %;
                     max-width: $i + %;
                 }
@@ -19,13 +38,13 @@
 
 @mixin grido-generator-special($class, $width, $dimension) {
     @if $dimension!='' {
-        .#{$class}__#{$dimension} {
+        .gc_#{$class}_#{$dimension} {
             flex-basis: $width;
             max-width: $width;
         }
     }
     @else {
-        .#{$class} {
+        .gc_#{$class} {
             flex-basis: $width;
             max-width: $width;
         }
@@ -35,12 +54,12 @@
 @mixin grido-generator-grows($class, $dimension) {
     @for $grow from 1 through 5 {
         @if $dimension!='' {
-            .#{$class}__#{$grow}__#{$dimension} {
+            .gc_#{$class}_#{$grow}_#{$dimension} {
                 flex: $grow;
             }
         }
         @else {
-            .#{$class}__#{$grow} {
+            .gc_#{$class}_#{$grow} {
                 flex: $grow;
             }
         }
@@ -50,19 +69,19 @@
 @mixin grido-generator-order($class, $dimension) {
     @for $order from 1 through 10 {
         @if $dimension!='' {
-            .#{$class}__#{$order}__#{$dimension} {
+            .gc_#{$class}_#{$order}_#{$dimension} {
                 order: $order;
             }
         }
         @else {
-            .#{$class}__#{$order} {
+            .gc_#{$class}_#{$order} {
                 order: $order;
             }
         }
     }
 }
 
-$breakpoints: ( 'sm' 'screen and (max-width: 767px)', 'md' 'screen and (max-width: 991px)') !default;
+$breakpoints: ('sm' 'screen and (max-width: 767px)', 'md' 'screen and (max-width: 991px)') !default;
 @mixin media-query($mq) {
     $breakpoint-found: false;
     @each $breakpoint in $breakpoints {
@@ -76,7 +95,7 @@ $breakpoints: ( 'sm' 'screen and (max-width: 767px)', 'md' 'screen and (max-widt
         }
     }
     @if $breakpoint-found==false {
-        @warn "Oops! Breakpoint ‘#{$mq}’ does not exist."
+        @warn "Oops! Breakpoint ‘#{$mq}’ does not exist.";
     }
 }
 
