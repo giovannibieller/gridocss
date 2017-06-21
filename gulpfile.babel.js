@@ -5,6 +5,7 @@ import sass from 'gulp-sass';
 import del from 'del';
 import notify from 'gulp-notify';
 import concat from 'gulp-concat';
+import uglify from 'gulp-uglify';
 import rename from 'gulp-rename';
 import runSequence from 'run-sequence';
 import babel from 'gulp-babel';
@@ -15,6 +16,7 @@ const paths = {
     root: './',
     scss: './scss',
     demo: './demo',
+    node_modules: './node_modules',
     dist: './dist'
 };
 
@@ -60,6 +62,41 @@ gulp.task('copy-demo', () => {
         )
         .pipe(gulp.dest(paths.dist + '/css'))
         .pipe(browserSync.reload({ stream: true }));
+});
+
+gulp.task('copy-prism-css', () => {
+    return gulp
+        .src([paths.node_modules + '/prismjs/themes/prism.css'])
+        .pipe(
+            sass({ outputStyle: 'compressed' }).on(
+                'error',
+                notify.onError(error => {
+                    return 'Error: ' + error.message;
+                })
+            )
+        )
+        .pipe(
+            rename({
+                suffix: '.min'
+            })
+        )
+        .pipe(gulp.dest(paths.dist + '/css'))
+        .pipe(browserSync.reload({ stream: true }));
+});
+
+gulp.task('copy-prism-js', () => {
+    return (
+        gulp
+            .src([paths.node_modules + '/prismjs/prism.js'])
+            //.pipe(uglify())
+            /*.pipe(
+                rename({
+                    suffix: '.min'
+                })
+            )*/
+            .pipe(gulp.dest(paths.dist + '/js'))
+            .pipe(browserSync.reload({ stream: true }))
+    );
 });
 
 /**
@@ -118,5 +155,5 @@ gulp.task('watch', ['dist', 'browser-sync'], () => {
  * Dist
  */
 gulp.task('dist', ['clean-dist-css'], cb => {
-    runSequence('copy-demo', 'copy-html', 'scss', 'zip', cb);
+    runSequence('copy-demo', 'copy-html', 'copy-prism-js', 'copy-prism-css', 'scss', 'zip', cb);
 });

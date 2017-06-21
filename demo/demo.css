@@ -41,6 +41,13 @@ pre {
     white-space: pre-wrap;
 }
 
+pre[class*="language-"].demo__code {
+    display: block;
+    padding: 15px;
+    margin: 15px 0 0;
+    height: auto;
+}
+
 .txt__right {
     text-align: right;
     position: relative;
@@ -119,4 +126,9 @@ pre {
 
 .underline {
     text-decoration: underline;
+}
+
+.prettyprint {
+    display: block;
+    width: 100%;
 }

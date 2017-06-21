@@ -17,25 +17,6 @@
     }
 }
 
-@mixin grido-generator-percent($dimension) {
-    @for $i from 1 through 100 {
-        @if $i%5==0 {
-            @if $dimension!='' {
-                .gc_#{$i}_#{$dimension}-p {
-                    flex-basis: $i + %;
-                    max-width: $i + %;
-                }
-            }
-            @else {
-                .gc_#{$i}-p {
-                    flex-basis: $i + %;
-                    max-width: $i + %;
-                }
-            }
-        }
-    }
-}
-
 @mixin grido-generator-special($class, $width, $dimension) {
     @if $dimension!='' {
         .gc_#{$class}_#{$dimension} {

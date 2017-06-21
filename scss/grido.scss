@@ -71,22 +71,19 @@
 }
 
 @include grido-generator('');
-@include grido-generator-percent('');
 @include grido-generator-special('auto', 'auto', '');
-@include grido-generator-grows('auto', '');
+@include grido-generator-grows('grow', '');
 @include grido-generator-order('order', '');
 @include media-query('md') {
     @include grido-generator('md');
-    @include grido-generator-percent('md');
     @include grido-generator-special('auto', 'auto', 'md');
-    @include grido-generator-grows('auto', 'md');
+    @include grido-generator-grows('grow', 'md');
     @include grido-generator-order('order', 'md');
 }
 
 @include media-query('sm') {
     @include grido-generator('sm');
-    @include grido-generator-percent('sm');
     @include grido-generator-special('auto', 'auto', 'sm');
-    @include grido-generator-grows('auto', 'sm');
+    @include grido-generator-grows('grow', 'sm');
     @include grido-generator-order('order', 'sm');
 }
