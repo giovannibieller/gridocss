@@ -16,6 +16,7 @@ const paths = {
     root: './',
     scss: './scss',
     demo: './demo',
+    ico: './ico',
     node_modules: './node_modules',
     dist: './dist'
 };
@@ -99,6 +100,20 @@ gulp.task('copy-prism-js', () => {
     );
 });
 
+gulp.task('copy-ico', () => {
+    return gulp
+        .src([paths.ico + '/*.*'])
+        .pipe(gulp.dest(paths.dist + '/ico'))
+        .pipe(browserSync.reload({ stream: true }));
+});
+
+gulp.task('copy-files', () => {
+    return gulp
+        .src([paths.ico + '/*.json', paths.ico + '/*.xml'])
+        .pipe(gulp.dest(paths.dist + '/'))
+        .pipe(browserSync.reload({ stream: true }));
+});
+
 /**
  * Zip CSS
  */
@@ -155,5 +170,15 @@ gulp.task('watch', ['dist', 'browser-sync'], () => {
  * Dist
  */
 gulp.task('dist', ['clean-dist-css'], cb => {
-    runSequence('copy-demo', 'copy-html', 'copy-prism-js', 'copy-prism-css', 'scss', 'zip', cb);
+    runSequence(
+        'copy-demo',
+        'copy-html',
+        'copy-prism-js',
+        'copy-prism-css',
+        'copy-ico',
+        'copy-files',
+        'scss',
+        'zip',
+        cb
+    );
 });

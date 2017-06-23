@@ -132,3 +132,9 @@ pre[class*="language-"].demo__code {
     display: block;
     width: 100%;
 }
+
+@media screen and (max-width: 767px) {
+    .twitter-share-button {
+        margin-top: 15px;
+    }
+}

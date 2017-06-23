@@ -12,6 +12,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
+    flex: 1;
     &.grido--end {
         justify-content: flex-end;
     }
@@ -20,6 +21,9 @@
     }
     &.grido--around {
         justify-content: space-around;
+    }
+    &.grido--center {
+        justify-content: center;
     }
     @include media-query('md') {
         &.grido_md--end {
@@ -65,25 +69,29 @@
     flex: 1;
 }
 
-[class*='grido'] {
-    box-sizing: border-box;
-    flex: 1;
+.grido--auto {
+    [class*='gc_'] {
+        flex: 0;
+    }
 }
 
 @include grido-generator('');
-@include grido-generator-special('auto', 'auto', '');
+@include grido-generator-auto('');
+@include grido-generator-fill('');
 @include grido-generator-grows('grow', '');
 @include grido-generator-order('order', '');
 @include media-query('md') {
     @include grido-generator('md');
-    @include grido-generator-special('auto', 'auto', 'md');
+    @include grido-generator-auto('md');
+    @include grido-generator-fill('md');
     @include grido-generator-grows('grow', 'md');
     @include grido-generator-order('order', 'md');
 }
 
 @include media-query('sm') {
     @include grido-generator('sm');
-    @include grido-generator-special('auto', 'auto', 'sm');
+    @include grido-generator-auto('sm');
+    @include grido-generator-fill('sm');
     @include grido-generator-grows('grow', 'sm');
     @include grido-generator-order('order', 'sm');
 }

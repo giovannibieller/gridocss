@@ -17,17 +17,34 @@
     }
 }
 
-@mixin grido-generator-special($class, $width, $dimension) {
+@mixin grido-generator-auto($dimension) {
     @if $dimension!='' {
-        .gc_#{$class}_#{$dimension} {
-            flex-basis: $width;
-            max-width: $width;
+        .gc_auto_#{$dimension} {
+            flex-basis: initial;
+            max-width: none;
+            flex: 0;
         }
     }
     @else {
-        .gc_#{$class} {
-            flex-basis: $width;
-            max-width: $width;
+        .gc_auto {
+            flex-basis: initial;
+            max-width: none;
+            flex: 0;
+        }
+    }
+}
+
+@mixin grido-generator-fill($dimension) {
+    @if $dimension!='' {
+        .gc_fill_#{$dimension} {
+            flex-basis: initial;
+            max-width: none;
+        }
+    }
+    @else {
+        .gc_fill {
+            flex-basis: initial;
+            max-width: none;
         }
     }
 }
