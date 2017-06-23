@@ -10,6 +10,13 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,600" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
 
+    <link rel="apple-touch-icon" sizes="180x180" href="ico/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="ico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="ico/favicon-16x16.png">
+    <link rel="manifest" href="manifest.json">
+    <link rel="mask-icon" href="ico/safari-pinned-tab.svg" color="#000000">
+    <meta name="theme-color" content="#ffffff">
+
     <link href="css/demo.min.css" rel="stylesheet">
     <link href="css/prism.min.css" rel="stylesheet">
     <link href="css/gridocss/grido.min.css" rel="stylesheet">
@@ -19,7 +26,7 @@
     <div class="demo__container">
         <h1>gridoCSS</h1>
         <div class="demo__main__content">
-            <p>A simple, light and responsive <strong>3KB</strong> FlexBox CSS Grid.</p>
+            <p>A simple, light and responsive <strong>4KB</strong> FlexBox CSS Grid.</p>
         </div>
 
         <div class="grido">
@@ -72,8 +79,7 @@
         <h2>grido items</h2>
         <div class="demo__text demo__text--sub">
             &#126; add
-            <pre>.gc_{size}</pre> class to your items.<br/> &#126; sizes: 2, 3, 4 ... up to 12<br/> &#126; default:
-            <pre>auto + flex 1</pre> to fill all the space
+            <pre>.gc_{size}</pre> class to your items.<br/> &#126; sizes: 2, 3, 4 ... up to 12
         </div>
 
         <div class="grido grido--pads">
@@ -96,8 +102,7 @@
             <pre>.gc_{size}_{device}</pre> class to your items.<br/>&#126; devices:
             <pre>sm [mobile], md [tablet]</pre><br/> &#126; breakpoints: md
             <pre>max-width: 991px;</pre> sm
-            <pre>max-width: 767px;</pre><br/>&#126; special widths:
-            <pre>.gc_auto_{device}</pre>
+            <pre>max-width: 767px;</pre>
         </div>
 
         <div class="grido grido--pads">
@@ -219,6 +224,30 @@
     &lt;div class="gc_2">...&lt;/div>
 &lt;/div></code></pre>
 
+        <h3>center</h3>
+        <div class="demo__text demo__text--sub">
+            &#126; set
+            <pre>.grido--center</pre> class for
+            <pre>center</pre> alignment
+        </div>
+        <div class="grido grido--center grido--pads">
+            <div class="demo__item gc_2">
+                <div class="demo__item__content">&nbsp;</div>
+            </div>
+            <div class="demo__item gc_2">
+                <div class="demo__item__content">&nbsp;</div>
+            </div>
+            <div class="demo__item gc_2">
+                <div class="demo__item__content">&nbsp;</div>
+            </div>
+        </div>
+
+        <pre class="demo__code"><code class="language-html">&lt;div class="grido grido--center">
+    &lt;div class="gc_2">...&lt;/div>
+    &lt;div class="gc_2">...&lt;/div>
+    &lt;div class="gc_2">...&lt;/div>
+&lt;/div></code></pre>
+
         <h3>responsive alignments</h3>
         <div class="demo__text demo__text--sub">
             &#126; set
@@ -246,21 +275,52 @@
     &lt;div class="gc_2">...&lt;/div>
 &lt;/div></code></pre>
 
-        <h2>grido autosizing and grow</h2>
+        <h2>grido fill</h2>
         <div class="demo__text demo__text--sub">
             &#126; set
-            <pre>.gc_auto</pre> class to fill all the available space.<br/> &#126; set
+            <pre>.gc_fill</pre> class on items to fill all the available space.<br/> &#126; set
+            <pre>.gc_fill_{device}</pre> class to manage responsive fill.
+        </div>
+        <div class="grido grido--pads">
+            <div class="demo__item gc_fill">
+                <div class="demo__item__content">&nbsp;</div>
+            </div>
+            <div class="demo__item gc_2 gc_fill_md">
+                <div class="demo__item__content">&nbsp;</div>
+            </div>
+        </div>
+
+        <pre class="demo__code"><code class="language-html">&lt;div class="grido">
+    &lt;div class="gc_fill">...&lt;/div>
+    &lt;div class="gc_2 gc_fill_md">...&lt;/div>
+&lt;/div></code></pre>
+
+        <h2>grido autosizing</h2>
+        <div class="demo__text demo__text--sub">
+            &#126; set
+            <pre>.gc_auto</pre> class on items to set auto width.<br/> &#126; set
+            <pre>.gc_auto_{device}</pre> class to manage responsive auto width.
+        </div>
+        <div class="grido grido--pads grido--start">
+            <div class="demo__item gc_auto">
+                <div class="demo__item__content">gridocss</div>
+            </div>
+            <div class="demo__item gc_3 gc_auto_md">
+                <div class="demo__item__content">gridocss</div>
+            </div>
+        </div>
+
+        <pre class="demo__code"><code class="language-html">&lt;div class="grido">
+    &lt;div class="gc_auto">...&lt;/div>
+    &lt;div class="gc_3 gc_auto_md">...&lt;/div>
+&lt;/div></code></pre>
+
+        <h2>grido grow</h2>
+        <div class="demo__text demo__text--sub">
+            &#126; set
             <pre>.gc_grow_{number}</pre> class to items to use a
             <pre>flex-grow</pre> ratio.<br/> &#126; set
             <pre>.gc_grow_{number}__{device}</pre> class to manage responsive grows
-        </div>
-        <div class="grido grido--pads">
-            <div class="demo__item gc_auto">
-                <div class="demo__item__content">&nbsp;</div>
-            </div>
-            <div class="demo__item gc_auto">
-                <div class="demo__item__content">&nbsp;</div>
-            </div>
         </div>
         <div class="grido grido--pads">
             <div class="demo__item gc_grow_1">
@@ -272,10 +332,6 @@
         </div>
 
         <pre class="demo__code"><code class="language-html">&lt;div class="grido">
-    &lt;div class="gc_auto">...&lt;/div>
-    &lt;div class="gc_auto">...&lt;/div>
-&lt;/div>
-&lt;div class="grido">
     &lt;div class="gc_grow">...&lt;/div>
     &lt;div class="gc_grow_3 gc_grow_1_md">...&lt;/div>
 &lt;/div></code></pre>
@@ -311,11 +367,37 @@
         </div>
 
         <div class="demo__footer">
-            by <a href="https://twitter.com/giovannibieller">@giovannibieller</a>
+            <div class="grido">
+                <div class="gc_6 gc_12_sm">
+                    by <a href="https://twitter.com/giovannibieller">@giovannibieller</a>
+                </div>
+                <div class="gc_auto gc_12_sm">
+                    <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=A simple, light and responsive 4KB FlexBox CSS Grid! @giovannibieller">Tweet</a>
+                </div>
+            </div>
         </div>
     </div>
 
     <script src="js/prism.js"></script>
+
+    <script>
+        window.twttr = (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0],
+                t = window.twttr || {};
+            if (d.getElementById(id)) return t;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "https://platform.twitter.com/widgets.js";
+            fjs.parentNode.insertBefore(js, fjs);
+
+            t._e = [];
+            t.ready = function (f) {
+                t._e.push(f);
+            };
+
+            return t;
+        }(document, "script", "twitter-wjs"));
+    </script>
 
 </body>
 
