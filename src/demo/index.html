@@ -17,9 +17,9 @@
     <link rel="mask-icon" href="ico/safari-pinned-tab.svg" color="#000000">
     <meta name="theme-color" content="#ffffff">
 
-    <link href="css/demo.min.css" rel="stylesheet">
-    <link href="css/prism.min.css" rel="stylesheet">
-    <link href="css/gridocss/grido.min.css" rel="stylesheet">
+    <link href="css/demo.css" rel="stylesheet">
+    <link href="css/prism.css" rel="stylesheet">
+    <link href="css/grido.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -154,7 +154,7 @@
         <h3>space-around</h3>
         <div class="demo__text demo__text--sub">
             &#126; set
-            <pre>.grido--around</pre> class for
+            <pre>.grido--around</pre> class to the container for
             <pre>space-around</pre> alignment
         </div>
         <div class="grido grido--around grido--pads">
@@ -339,7 +339,7 @@
         <h2>grido order</h2>
         <div class="demo__text demo__text--sub">
             &#126; set
-            <pre>.gc_order_</pre> class to your items to change the order<br/> &#126; set
+            <pre>.gc_order_{number}</pre> class to your items to change the order<br/> &#126; set
             <pre>.gc_order_{number}__{device}</pre> class to manage responsive order
         </div>
         <div class="grido grido--pads">
@@ -368,36 +368,14 @@
 
         <div class="demo__footer">
             <div class="grido">
-                <div class="gc_6 gc_12_sm">
+                <div class="gc_12">
                     by <a href="https://twitter.com/giovannibieller">@giovannibieller</a>
-                </div>
-                <div class="gc_auto gc_12_sm">
-                    <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=A simple, light and responsive 4KB FlexBox CSS Grid! @giovannibieller">Tweet</a>
                 </div>
             </div>
         </div>
     </div>
 
     <script src="js/prism.js"></script>
-
-    <script>
-        window.twttr = (function (d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0],
-                t = window.twttr || {};
-            if (d.getElementById(id)) return t;
-            js = d.createElement(s);
-            js.id = id;
-            js.src = "https://platform.twitter.com/widgets.js";
-            fjs.parentNode.insertBefore(js, fjs);
-
-            t._e = [];
-            t.ready = function (f) {
-                t._e.push(f);
-            };
-
-            return t;
-        }(document, "script", "twitter-wjs"));
-    </script>
 
 </body>
 

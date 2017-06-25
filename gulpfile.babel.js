@@ -14,11 +14,13 @@ import zip from 'gulp-zip';
 
 const paths = {
     root: './',
-    scss: './scss',
-    demo: './demo',
-    ico: './ico',
+    src: './src',
+    scss: './src/assets/scss',
+    ico: './src/assets/ico',
+    demo: './src/demo',
     node_modules: './node_modules',
-    dist: './dist'
+    dist: './dist',
+    demobuild: './demo'
 };
 
 /**
@@ -27,7 +29,7 @@ const paths = {
 gulp.task('browser-sync', () => {
     browserSync.init({
         server: {
-            baseDir: paths.dist
+            baseDir: paths.demobuild
         }
     });
 });
@@ -38,7 +40,7 @@ gulp.task('browser-sync', () => {
 gulp.task('copy-html', () => {
     return gulp
         .src([paths.demo + '/index.html'])
-        .pipe(gulp.dest(paths.dist))
+        .pipe(gulp.dest(paths.demobuild))
         .pipe(browserSync.reload({ stream: true }));
 });
 
@@ -48,69 +50,37 @@ gulp.task('copy-html', () => {
 gulp.task('copy-demo', () => {
     return gulp
         .src([paths.demo + '/demo.css'])
-        .pipe(
-            sass({ outputStyle: 'compressed' }).on(
-                'error',
-                notify.onError(error => {
-                    return 'Error: ' + error.message;
-                })
-            )
-        )
-        .pipe(
-            rename({
-                suffix: '.min'
-            })
-        )
-        .pipe(gulp.dest(paths.dist + '/css'))
+        .pipe(sass({ outputStyle: 'compressed' }))
+        .pipe(gulp.dest(paths.demobuild + '/css'))
         .pipe(browserSync.reload({ stream: true }));
 });
 
 gulp.task('copy-prism-css', () => {
     return gulp
         .src([paths.node_modules + '/prismjs/themes/prism.css'])
-        .pipe(
-            sass({ outputStyle: 'compressed' }).on(
-                'error',
-                notify.onError(error => {
-                    return 'Error: ' + error.message;
-                })
-            )
-        )
-        .pipe(
-            rename({
-                suffix: '.min'
-            })
-        )
-        .pipe(gulp.dest(paths.dist + '/css'))
+        .pipe(sass({ outputStyle: 'compressed' }))
+        .pipe(gulp.dest(paths.demobuild + '/css'))
         .pipe(browserSync.reload({ stream: true }));
 });
 
 gulp.task('copy-prism-js', () => {
-    return (
-        gulp
-            .src([paths.node_modules + '/prismjs/prism.js'])
-            //.pipe(uglify())
-            /*.pipe(
-                rename({
-                    suffix: '.min'
-                })
-            )*/
-            .pipe(gulp.dest(paths.dist + '/js'))
-            .pipe(browserSync.reload({ stream: true }))
-    );
+    return gulp
+        .src([paths.node_modules + '/prismjs/prism.js'])
+        .pipe(gulp.dest(paths.demobuild + '/js'))
+        .pipe(browserSync.reload({ stream: true }));
 });
 
 gulp.task('copy-ico', () => {
     return gulp
-        .src([paths.ico + '/*.*'])
-        .pipe(gulp.dest(paths.dist + '/ico'))
+        .src([paths.ico + '/*.*', '!' + paths.ico + '/*.json', '!' + paths.ico + '/*.xml'])
+        .pipe(gulp.dest(paths.demobuild + '/ico'))
         .pipe(browserSync.reload({ stream: true }));
 });
 
 gulp.task('copy-files', () => {
     return gulp
         .src([paths.ico + '/*.json', paths.ico + '/*.xml'])
-        .pipe(gulp.dest(paths.dist + '/'))
+        .pipe(gulp.dest(paths.demobuild + '/'))
         .pipe(browserSync.reload({ stream: true }));
 });
 
@@ -119,17 +89,19 @@ gulp.task('copy-files', () => {
  */
 gulp.task('zip', () =>
     gulp
-        .src(paths.dist + '/css/gridocss/grido.min.css')
+        .src([paths.dist + '/grido.css', paths.dist + '/grido.min.css'])
         .pipe(zip('gridoCSS.zip'))
-        .pipe(gulp.dest(paths.dist + '/zip'))
+        .pipe(gulp.dest(paths.demobuild + '/zip'))
 );
 
 /**
- * Sass init
+ * Scss
  */
 gulp.task('scss', () => {
     return gulp
         .src([paths.scss + '/grido.scss'])
+        .pipe(sass())
+        .pipe(gulp.dest(paths.dist + '/'))
         .pipe(
             sass({ outputStyle: 'compressed' }).on(
                 'error',
@@ -143,19 +115,16 @@ gulp.task('scss', () => {
                 suffix: '.min'
             })
         )
-        .pipe(gulp.dest(paths.dist + '/css/gridocss'))
+        .pipe(gulp.dest(paths.dist + '/'))
+        .pipe(gulp.dest(paths.demobuild + '/css'))
         .pipe(browserSync.reload({ stream: true }));
 });
 
 /**
  * Del folder
  */
-gulp.task('clean-dist-css', del.bind(null, [paths.dist + '/css']));
-
-/**
- * Tasks
- */
-gulp.task('default', ['dist']);
+gulp.task('clean-dist', del.bind(null, [paths.dist]));
+gulp.task('clean-demo', del.bind(null, [paths.demobuild]));
 
 /**
  * Watch
@@ -167,9 +136,14 @@ gulp.task('watch', ['dist', 'browser-sync'], () => {
 });
 
 /**
+ * Default
+ */
+gulp.task('default', ['dist']);
+
+/**
  * Dist
  */
-gulp.task('dist', ['clean-dist-css'], cb => {
+gulp.task('dist', ['clean-dist', 'clean-demo'], cb => {
     runSequence(
         'copy-demo',
         'copy-html',
