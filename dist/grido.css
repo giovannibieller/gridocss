@@ -41,7 +41,7 @@
 .grido--pads {
   margin-left: -.5rem;
   margin-right: -.5rem; }
-  .grido--pads [class*='gc_'] {
+  .grido--pads > [class*='gc_'] {
     padding-left: .5rem;
     padding-right: .5rem; }
 
@@ -49,7 +49,7 @@
   box-sizing: border-box;
   flex: 1; }
 
-.grido--auto [class*='gc_'] {
+.grido--auto > [class*='gc_'] {
   flex: 0; }
 
 .gc_2 {
