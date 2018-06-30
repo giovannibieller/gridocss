@@ -26,7 +26,8 @@
     <div class="demo__container">
         <h1>gridoCSS</h1>
         <div class="demo__main__content">
-            <p>A simple, light and responsive <strong>4KB</strong> FlexBox CSS Grid.</p>
+            <p>A simple, light and responsive
+                <strong>5KB</strong> FlexBox CSS Grid.</p>
         </div>
 
         <div class="grido">
@@ -76,10 +77,62 @@
 
         <pre class="demo__code"><code class="language-html">&lt;div class="grido">...&lt;/div></code></pre>
 
+        <h2>grido direction</h2>
+        <div class="demo__text demo__text--sub">
+            &#126; add
+            <pre>.grido--{direction}</pre> class for manage direction
+            <br/>&#126; add
+            <pre>.grido_{device}--{direction}</pre> to manage responsive direction
+            <br/>&#126; you can use
+            <pre>--col</pre> or
+            <pre>--row</pre>.
+            <br/>&#126; default is
+            <pre>row</pre>
+        </div>
+
+        <div class="grido grido--pads grido--col grido_sm--row">
+            <div class="demo__item gc_6">
+                <div class="demo__item__content">&nbsp;</div>
+            </div>
+            <div class="demo__item gc_6">
+                <div class="demo__item__content">&nbsp;</div>
+            </div>
+        </div>
+
+        <pre class="demo__code"><code class="language-html">&lt;div class="grido grido--pads grido--col grido_sm--row">...&lt;/div></code></pre>
+
+        <h2>grido wrap</h2>
+        <div class="demo__text demo__text--sub">
+            &#126; add
+            <pre>.grido--{wrap}</pre> class for manage wrap
+            <br/>&#126; add
+            <pre>.grido_{device}--{wrap}</pre> to manage responsive wrap
+            <br/>&#126; you can use
+            <pre>--wrap</pre> or
+            <pre>--nowrap</pre>.
+            <br/>&#126; default is
+            <pre>wrap</pre>
+        </div>
+
+        <div class="grido grido--pads grido--nowrap grido_sm--wrap">
+            <div class="demo__item gc_12">
+                <div class="demo__item__content">&nbsp;</div>
+            </div>
+            <div class="demo__item gc_12">
+                <div class="demo__item__content">&nbsp;</div>
+            </div>
+        </div>
+
+        <pre class="demo__code"><code class="language-html">&lt;div class="grido grido--pads grido--nowrap grido_sm--wrap">
+    &lt;div class="gc_12">...&lt;/div>
+    &lt;div class="gc_12">...&lt;/div>
+&lt;/div></code></pre>
+
         <h2>grido items</h2>
         <div class="demo__text demo__text--sub">
             &#126; add
-            <pre>.gc_{size}</pre> class to your items.<br/> &#126; sizes: 2, 3, 4 ... up to 12
+            <pre>.gc_{size}</pre> class to your items.
+            <br/> &#126; sizes: 2, 3, 4 ... up to 12
         </div>
 
         <div class="grido grido--pads">
@@ -99,8 +152,10 @@
         <h2>grido responsive</h2>
         <div class="demo__text demo__text--sub">
             &#126; add
-            <pre>.gc_{size}_{device}</pre> class to your items.<br/>&#126; devices:
-            <pre>sm [mobile], md [tablet]</pre><br/> &#126; breakpoints: md
+            <pre>.gc_{size}_{device}</pre> class to your items.
+            <br/>&#126; devices:
+            <pre>sm [mobile], md [tablet]</pre>
+            <br/> &#126; breakpoints: md
             <pre>max-width: 991px;</pre> sm
             <pre>max-width: 767px;</pre>
         </div>
@@ -275,10 +330,140 @@
     &lt;div class="gc_2">...&lt;/div>
 &lt;/div></code></pre>
 
+        <h2>vertical alignments</h2>
+        <h3>flex-start</h3>
+
+        <div class="demo__text demo__text--sub">
+            &#126; set
+            <pre>.grido--v_start</pre> class for
+            <pre>flex-start</pre> vertical alignment
+        </div>
+        <div class="grido grido--v_start grido--pads">
+            <div class="demo__item gc_2">
+                <div class="demo__item__content demo__item__content--doubleheight">&nbsp;</div>
+            </div>
+            <div class="demo__item gc_2">
+                <div class="demo__item__content">&nbsp;</div>
+            </div>
+            <div class="demo__item gc_2">
+                <div class="demo__item__content">&nbsp;</div>
+            </div>
+        </div>
+
+        <pre class="demo__code"><code class="language-html">&lt;div class="grido grido--v_start">
+    &lt;div class="gc_2">...&lt;/div>
+    &lt;div class="gc_2">...&lt;/div>
+    &lt;div class="gc_2">...&lt;/div>
+&lt;/div></code></pre>
+
+        <h3>center</h3>
+
+        <div class="demo__text demo__text--sub">
+            &#126; set
+            <pre>.grido--v_center</pre> class for
+            <pre>center</pre> vertical alignment
+        </div>
+        <div class="grido grido--v_center grido--pads">
+            <div class="demo__item gc_2">
+                <div class="demo__item__content demo__item__content--doubleheight">&nbsp;</div>
+            </div>
+            <div class="demo__item gc_2">
+                <div class="demo__item__content">&nbsp;</div>
+            </div>
+            <div class="demo__item gc_2">
+                <div class="demo__item__content">&nbsp;</div>
+            </div>
+        </div>
+
+        <pre class="demo__code"><code class="language-html">&lt;div class="grido grido--v_center">
+    &lt;div class="gc_2">...&lt;/div>
+    &lt;div class="gc_2">...&lt;/div>
+    &lt;div class="gc_2">...&lt;/div>
+&lt;/div></code></pre>
+
+        <h3>flex-end</h3>
+
+        <div class="demo__text demo__text--sub">
+            &#126; set
+            <pre>.grido--v_end</pre> class for
+            <pre>flex-end</pre> vertical alignment
+        </div>
+        <div class="grido grido--v_end grido--pads">
+            <div class="demo__item gc_2">
+                <div class="demo__item__content demo__item__content--doubleheight">&nbsp;</div>
+            </div>
+            <div class="demo__item gc_2">
+                <div class="demo__item__content">&nbsp;</div>
+            </div>
+            <div class="demo__item gc_2">
+                <div class="demo__item__content">&nbsp;</div>
+            </div>
+        </div>
+
+        <pre class="demo__code"><code class="language-html">&lt;div class="grido grido--v_end">
+    &lt;div class="gc_2">...&lt;/div>
+    &lt;div class="gc_2">...&lt;/div>
+    &lt;div class="gc_2">...&lt;/div>
+&lt;/div></code></pre>
+
+        <h3>stretch</h3>
+
+        <div class="demo__text demo__text--sub">
+            &#126; set
+            <pre>.grido--v_stretch</pre> class for
+            <pre>stretch</pre> stretch alignment
+        </div>
+        <div class="grido grido--v_stretch grido--pads demo__container__height">
+            <div class="demo__item gc_3">
+                <div class="demo__item__content demo__item__content--fullheight">&nbsp;</div>
+            </div>
+            <div class="demo__item gc_3">
+                <div class="demo__item__content demo__item__content--fullheight">&nbsp;</div>
+            </div>
+            <div class="demo__item gc_3">
+                <div class="demo__item__content demo__item__content--fullheight">&nbsp;</div>
+            </div>
+        </div>
+
+        <pre class="demo__code"><code class="language-html">&lt;div class="grido grido--v_stretch">
+    &lt;div class="gc_2">...&lt;/div>
+    &lt;div class="gc_2">...&lt;/div>
+    &lt;div class="gc_2">...&lt;/div>
+&lt;/div></code></pre>
+
+        <h3>vertical responsive alignments</h3>
+        <div class="demo__text demo__text--sub">
+            &#126; set
+            <pre>.grido_{device}--{type}</pre> to manage responsive alignments
+        </div>
+        <div class="grido grido--v_start grido_md--v_end grido_sm--v_center grido--pads">
+            <div class="demo__item gc_2">
+                <div class="demo__item__content demo__item__content--doubleheight">&nbsp;</div>
+            </div>
+            <div class="demo__item gc_2">
+                <div class="demo__item__content">&nbsp;</div>
+            </div>
+            <div class="demo__item gc_2">
+                <div class="demo__item__content demo__item__content--doubleheight">&nbsp;</div>
+            </div>
+            <div class="demo__item gc_2">
+                <div class="demo__item__content">&nbsp;</div>
+            </div>
+        </div>
+
+        <pre class="demo__code"><code class="language-html">&lt;div class="grido grido--v_start grido_md--v_end grido_sm--v_center">
+&lt;div class="gc_2">...&lt;/div>
+&lt;div class="gc_2">...&lt;/div>
+&lt;div class="gc_2">...&lt;/div>
+&lt;div class="gc_2">...&lt;/div>
+&lt;/div></code></pre>
+
+
         <h2>grido fill</h2>
         <div class="demo__text demo__text--sub">
             &#126; set
-            <pre>.gc_fill</pre> class on items to fill all the available space.<br/> &#126; set
+            <pre>.gc_fill</pre> class on items to fill all the available space.
+            <br/> &#126; set
             <pre>.gc_fill_{device}</pre> class to manage responsive fill.
         </div>
         <div class="grido grido--pads">
@@ -298,7 +483,8 @@
         <h2>grido autosizing</h2>
         <div class="demo__text demo__text--sub">
             &#126; set
-            <pre>.gc_auto</pre> class on items to set auto width.<br/> &#126; set
+            <pre>.gc_auto</pre> class on items to set auto width.
+            <br/> &#126; set
             <pre>.gc_auto_{device}</pre> class to manage responsive auto width.
         </div>
         <div class="grido grido--pads grido--start">
@@ -319,7 +505,8 @@
         <div class="demo__text demo__text--sub">
             &#126; set
             <pre>.gc_grow_{number}</pre> class to items to use a
-            <pre>flex-grow</pre> ratio.<br/> &#126; set
+            <pre>flex-grow</pre> ratio.
+            <br/> &#126; set
             <pre>.gc_grow_{number}__{device}</pre> class to manage responsive grows
         </div>
         <div class="grido grido--pads">
@@ -339,7 +526,8 @@
         <h2>grido order</h2>
         <div class="demo__text demo__text--sub">
             &#126; set
-            <pre>.gc_order_{number}</pre> class to your items to change the order<br/> &#126; set
+            <pre>.gc_order_{number}</pre> class to your items to change the order
+            <br/> &#126; set
             <pre>.gc_order_{number}__{device}</pre> class to manage responsive order
         </div>
         <div class="grido grido--pads">
@@ -362,14 +550,19 @@
 
         <h2>start to grido ... now</h2>
         <div class="demo__text demo__text--sub">
-            &#126; you can <a href="zip/gridoCSS.zip">download</a> the zip<br/> &#126; you can use npm
-            <pre>npm install gridocss --save</pre><br/> &#126; you can fork it on <a href="https://github.com/giovannibieller/gridocss">github</a>
+            &#126; you can
+            <a href="zip/gridoCSS.zip">download</a> the zip
+            <br/> &#126; you can use npm
+            <pre>npm install gridocss --save</pre>
+            <br/> &#126; you can fork it on
+            <a href="https://github.com/giovannibieller/gridocss">github</a>
         </div>
 
         <div class="demo__footer">
             <div class="grido">
                 <div class="gc_12">
-                    by <a href="https://twitter.com/giovannibieller">@giovannibieller</a>
+                    by
+                    <a href="https://twitter.com/giovannibieller">@giovannibieller</a>
                 </div>
             </div>
         </div>

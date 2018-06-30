@@ -13,6 +13,12 @@
     flex-wrap: wrap;
     justify-content: space-between;
     flex: 1;
+    &.grido--nowrap {
+        flex-wrap: nowrap;
+    }
+    &.grido--col {
+        flex-direction: column;
+    }
     &.grido--end {
         justify-content: flex-end;
     }
@@ -24,6 +30,18 @@
     }
     &.grido--center {
         justify-content: center;
+    }
+    &.grido--v_center {
+        align-items: center;
+    }
+    &.grido--v_start {
+        align-items: flex-start;
+    }
+    &.grido--v_end {
+        align-items: flex-end;
+    }
+    &.grido--v_stretch {
+        align-items: stretch;
     }
     @include media-query('md') {
         &.grido_md--end {
@@ -37,6 +55,30 @@
         }
         &.grido_md--between {
             justify-content: space-between;
+        }
+        &.grido_md--v_center {
+            align-items: center;
+        }
+        &.grido_md--v_start {
+            align-items: flex-start;
+        }
+        &.grido_md--v_end {
+            align-items: flex-end;
+        }
+        &.grido_md--v_stretch {
+            align-items: stretch;
+        }
+        &.grido_md--col {
+            flex-direction: column;
+        }
+        &.grido_md--row {
+            flex-direction: row;
+        }
+        &.grido_md--wrap {
+            flex-wrap: wrap;
+        }
+        &.grido_md--nowrap {
+            flex-wrap: nowrap;
         }
     }
     @include media-query('sm') {
@@ -52,15 +94,39 @@
         &.grido_sm--between {
             justify-content: space-between;
         }
+        &.grido_sm--v_center {
+            align-items: center;
+        }
+        &.grido_sm--v_start {
+            align-items: flex-start;
+        }
+        &.grido_sm--v_end {
+            align-items: flex-end;
+        }
+        &.grido_sm--v_stretch {
+            align-items: stretch;
+        }
+        &.grido_sm--col {
+            flex-direction: column;
+        }
+        &.grido_sm--row {
+            flex-direction: row;
+        }
+        &.grido_sm--wrap {
+            flex-wrap: wrap;
+        }
+        &.grido_sm--nowrap {
+            flex-wrap: nowrap;
+        }
     }
 }
 
 .grido--pads {
-    margin-left: -.5rem;
-    margin-right: -.5rem;
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
     > [class*='gc_'] {
-        padding-left: .5rem;
-        padding-right: .5rem;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
     }
 }
 

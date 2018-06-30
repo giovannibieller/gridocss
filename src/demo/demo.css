@@ -30,6 +30,13 @@ a {
     color: grey;
 }
 
+*,
+*:before,
+*:after {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
 pre {
     font-family: 'Inconsolata';
     width: auto;
@@ -41,7 +48,7 @@ pre {
     white-space: pre-wrap;
 }
 
-pre[class*="language-"].demo__code {
+pre[class*='language-'].demo__code {
     display: block;
     padding: 15px;
     margin: 15px 0 0;
@@ -109,14 +116,26 @@ pre[class*="language-"].demo__code {
     margin: 0;
 }
 
+.demo__container__height {
+    height: 150px;
+}
+
 .demo__item {
     color: white;
 }
 
 .demo__item__content {
-    padding: .5rem;
+    padding: 0.5rem;
     margin-bottom: 1rem;
     background: black;
+}
+
+.demo__item__content.demo__item__content--doubleheight {
+    padding: 2rem;
+}
+
+.demo__item__content.demo__item__content--fullheight {
+    height: 100%;
 }
 
 .demo__footer {

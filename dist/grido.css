@@ -11,6 +11,10 @@
   flex-wrap: wrap;
   justify-content: space-between;
   flex: 1; }
+  .grido.grido--nowrap {
+    flex-wrap: nowrap; }
+  .grido.grido--col {
+    flex-direction: column; }
   .grido.grido--end {
     justify-content: flex-end; }
   .grido.grido--start {
@@ -19,6 +23,14 @@
     justify-content: space-around; }
   .grido.grido--center {
     justify-content: center; }
+  .grido.grido--v_center {
+    align-items: center; }
+  .grido.grido--v_start {
+    align-items: flex-start; }
+  .grido.grido--v_end {
+    align-items: flex-end; }
+  .grido.grido--v_stretch {
+    align-items: stretch; }
   @media screen and (max-width: 991px) {
     .grido.grido_md--end {
       justify-content: flex-end; }
@@ -27,7 +39,23 @@
     .grido.grido_md--around {
       justify-content: space-around; }
     .grido.grido_md--between {
-      justify-content: space-between; } }
+      justify-content: space-between; }
+    .grido.grido_md--v_center {
+      align-items: center; }
+    .grido.grido_md--v_start {
+      align-items: flex-start; }
+    .grido.grido_md--v_end {
+      align-items: flex-end; }
+    .grido.grido_md--v_stretch {
+      align-items: stretch; }
+    .grido.grido_md--col {
+      flex-direction: column; }
+    .grido.grido_md--row {
+      flex-direction: row; }
+    .grido.grido_md--wrap {
+      flex-wrap: wrap; }
+    .grido.grido_md--nowrap {
+      flex-wrap: nowrap; } }
   @media screen and (max-width: 767px) {
     .grido.grido_sm--end {
       justify-content: flex-end; }
@@ -36,14 +64,30 @@
     .grido.grido_sm--around {
       justify-content: space-around; }
     .grido.grido_sm--between {
-      justify-content: space-between; } }
+      justify-content: space-between; }
+    .grido.grido_sm--v_center {
+      align-items: center; }
+    .grido.grido_sm--v_start {
+      align-items: flex-start; }
+    .grido.grido_sm--v_end {
+      align-items: flex-end; }
+    .grido.grido_sm--v_stretch {
+      align-items: stretch; }
+    .grido.grido_sm--col {
+      flex-direction: column; }
+    .grido.grido_sm--row {
+      flex-direction: row; }
+    .grido.grido_sm--wrap {
+      flex-wrap: wrap; }
+    .grido.grido_sm--nowrap {
+      flex-wrap: nowrap; } }
 
 .grido--pads {
-  margin-left: -.5rem;
-  margin-right: -.5rem; }
+  margin-left: -0.5rem;
+  margin-right: -0.5rem; }
   .grido--pads > [class*='gc_'] {
-    padding-left: .5rem;
-    padding-right: .5rem; }
+    padding-left: 0.5rem;
+    padding-right: 0.5rem; }
 
 [class*='gc_'] {
   box-sizing: border-box;
