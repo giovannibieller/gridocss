@@ -2,9 +2,8 @@
  * @title gridoCSS
  * @author Giovanni Bieller
  * @wesite http://giovannibieller.me
- * @email giovanni.bieller@gmail.com 
+ * @email giovanni.bieller@gmail.com
  */
-
 @import './utils/mixins';
 .grido {
     box-sizing: border-box;
@@ -120,7 +119,6 @@
         }
     }
 }
-
 .grido--pads {
     margin-left: -0.5rem;
     margin-right: -0.5rem;
@@ -129,18 +127,15 @@
         padding-right: 0.5rem;
     }
 }
-
-[class*='gc_'] {
+.grido > [class*='gc_'] {
     box-sizing: border-box;
     flex: 1;
 }
-
 .grido--auto {
     > [class*='gc_'] {
         flex: 0;
     }
 }
-
 @include grido-generator('');
 @include grido-generator-auto('');
 @include grido-generator-fill('');
@@ -153,7 +148,6 @@
     @include grido-generator-grows('grow', 'md');
     @include grido-generator-order('order', 'md');
 }
-
 @include media-query('sm') {
     @include grido-generator('sm');
     @include grido-generator-auto('sm');

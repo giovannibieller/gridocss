@@ -2,7 +2,7 @@
  * @title gridoCSS
  * @author Giovanni Bieller
  * @wesite http://giovannibieller.me
- * @email giovanni.bieller@gmail.com 
+ * @email giovanni.bieller@gmail.com
  */
 .grido {
   box-sizing: border-box;
@@ -89,7 +89,7 @@
     padding-left: 0.5rem;
     padding-right: 0.5rem; }
 
-[class*='gc_'] {
+.grido > [class*='gc_'] {
   box-sizing: border-box;
   flex: 1; }
 

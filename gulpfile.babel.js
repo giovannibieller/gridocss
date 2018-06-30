@@ -11,6 +11,7 @@ import runSequence from 'run-sequence';
 import babel from 'gulp-babel';
 import browserSync from 'browser-sync';
 import zip from 'gulp-zip';
+import gulpStylelint from 'gulp-stylelint';
 
 const paths = {
     root: './',
@@ -121,6 +122,17 @@ gulp.task('scss', () => {
 });
 
 /**
+ * Lint CSS
+ */
+gulp.task('lint-scss', function lintCssTask() {
+    return gulp.src([paths.scss + '/grido.scss']).pipe(
+        gulpStylelint({
+            reporters: [{ formatter: 'string', console: true }]
+        })
+    );
+});
+
+/**
  * Del folder
  */
 gulp.task('clean-dist', del.bind(null, [paths.dist]));
@@ -143,7 +155,7 @@ gulp.task('default', ['dist']);
 /**
  * Dist
  */
-gulp.task('dist', ['clean-dist', 'clean-demo'], cb => {
+gulp.task('dist', ['clean-dist', 'clean-demo', 'lint-scss'], cb => {
     runSequence(
         'copy-demo',
         'copy-html',
