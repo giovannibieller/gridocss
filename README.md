@@ -1,9 +1,9 @@
 # gridoCSS
 
-simple, light and responsive Flexbox CSS Grid made with SCSS
-
 [![npm version](https://badge.fury.io/js/gridocss.svg)](https://badge.fury.io/js/gridocss)
 [![NPM Status](https://img.shields.io/github/license/giovannibieller/gridocss.svg)](https://www.npmjs.org/package/gridocss)
+
+simple, light and responsive Flexbox CSS Grid made with SCSS
 
 ## grido TOC
 
