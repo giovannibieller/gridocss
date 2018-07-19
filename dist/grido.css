@@ -90,8 +90,7 @@
     padding-right: 0.5rem; }
 
 .grido > [class*='gc_'] {
-  box-sizing: border-box;
-  flex: 1; }
+  box-sizing: border-box; }
 
 .grido--auto > [class*='gc_'] {
   flex: 0; }
